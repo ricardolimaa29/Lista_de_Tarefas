@@ -22,15 +22,15 @@ class Task(ft.Column):
                     spacing=0,
                     controls=[
                         ft.IconButton(
-                            icon=ft.icons.CREATE_OUTLINED,
+                            icon=ft.Icons.CREATE_OUTLINED,
                             tooltip="Editar lista",
-                            icon_color=ft.colors.GREEN,
+                            icon_color=ft.Colors.GREEN,
                             on_click=self.edit_clicked,
                         ),
                         ft.IconButton(
-                            ft.icons.DELETE_OUTLINE,
+                            ft.Icons.DELETE_OUTLINE,
                             tooltip="Deletar lista",
-                            icon_color=ft.colors.RED,
+                            icon_color=ft.Colors.RED,
                             on_click=self.delete_clicked,
                         ),
                     ],
@@ -45,8 +45,8 @@ class Task(ft.Column):
             controls=[
                 self.edit_name,
                 ft.IconButton(
-                    icon=ft.icons.DONE_OUTLINE_OUTLINED,
-                    icon_color=ft.colors.GREEN,
+                    icon=ft.Icons.DONE_OUTLINE_OUTLINED,
+                    icon_color=ft.Colors.GREEN,
                     tooltip="Atualizar lista",
                     on_click=self.save_clicked,
                 ),
@@ -104,7 +104,7 @@ class TodoApp(ft.Column):
                 controls=[
                     self.new_task,
                     ft.FloatingActionButton(
-                        icon=ft.icons.ADD, on_click=self.add_clicked
+                        icon=ft.Icons.ADD, on_click=self.add_clicked
                     ),
                 ],
             ),
@@ -163,23 +163,23 @@ class TodoApp(ft.Column):
                 count += 1
         if count == 1:
             self.items_left.value = f"{count} item a fazer !"
-            self.items_left.color = ft.colors.GREEN_400
+            self.items_left.color = ft.Colors.GREEN_400
         elif count >= 2 and count <= 5:
             self.items_left.value = f"{count} itens a fazer !"
-            self.items_left.color = ft.colors.YELLOW_200
+            self.items_left.color = ft.Colors.YELLOW_200
         elif count >= 6:
             self.items_left.value = f"{count} itens a fazer !"
-            self.items_left.color = ft.colors.RED_200
+            self.items_left.color = ft.Colors.RED_200
         elif count == 0:
             self.items_left.value = "0 itens a fazer"
-            self.items_left.color = ft.colors.WHITE
+            self.items_left.color = ft.Colors.WHITE
 
 
 
 def main(page: ft.Page):
     page.title = "Controle de Tarefas"
     page.theme_mode = 'dark'
-    page.theme = ft.Theme(color_scheme_seed=ft.colors.PURPLE_500)
+    page.theme = ft.Theme(color_scheme_seed=ft.Colors.PURPLE_500)
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.scroll = ft.ScrollMode.ADAPTIVE
     page.fonts = {
